@@ -1,0 +1,157 @@
+body{
+    background-color: burlywood;
+}
+#top{
+    background-color: black;
+    font-size: 250%;
+    color: white;
+    text-align: center;
+}
+#playarea{
+    background-color: burlywood;
+    display:flex;
+    justify-content: center;
+}
+#playerarea{
+    display: flex;                   
+    flex-wrap: wrap;                    
+    justify-content: space-around;
+    background-color: burlywood;
+    margin-top:5%;
+    margin-right: 10%;
+    padding: 0%;
+    line-height: 0%;
+    border: black solid 1px;
+    padding-top: 5%;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+.cards{
+    flex: 0 0 32%;                      
+    height: 5%;
+    font-size: 170%;
+    padding:0;
+    padding-bottom: 10%;
+}
+#opponentarea{
+    display: flex;                   
+    flex-wrap: wrap;                    
+    justify-content: space-around;
+    background-color: burlywood;
+    margin-top:5%;
+    padding: 0%;
+    line-height: 0%;
+    border: black solid 1px;
+    padding-top: 5%;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+}
+.enemycards{
+    flex: 0 0 32%;                      
+    height: 5%;
+    font-size: 170%;
+    padding:0;
+    padding-bottom: 10%;
+}
+.first{
+    text-align: right;
+}
+.second{
+    text-align: center;
+}
+.third{
+    text-align: left;
+}
+#cardarea{
+    border: black solid 2px;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+}
+.add-cards{
+    margin-left: 2%;
+    margin-right: 2%;
+    list-style: none;
+    border: black solid 2px;
+    border-radius: 5px;
+    font-size: 200%;
+    height: 100%;
+    width: 100%;
+}
+.addCard{
+    height: 100%;
+    width: 100%;
+}
+#end{
+    margin-top: 1%;
+    text-align: center;
+}
+#fold{
+    text-align: center;
+    margin-top: 5%;
+}
+#playerAdded{
+    margin-top: 5%;
+    font-size: 150%;
+    margin-left: 20%;
+}
+#opponentAdded{
+    float: right;
+    font-size: 150%;
+    margin-right: 17%;
+}
+#GameOver{
+    margin-top: 10%;
+    display: none;
+    text-align: center;
+}
+#replay{
+    margin-top: 15%;
+    display: none;
+    margin-left: 37%;
+    position: fixed;
+    top: 50%;
+    left: 13%;
+    transform: translate(-50%, -50%);
+}
+.buttons{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: white solid 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+.buttons:hover{
+    background-color:gray ;
+}
+#replayDiv{
+    align-content: center;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 1150px){
+    #cardarea{
+        flex-flow: column;
+        padding-right: 5%;
+    }
+    .addCard{
+        height: 25%;
+        width: 25%;
+    }
+    .add-cards{
+        text-align: center;
+    }
+    #playarea{
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+    #playerarea{
+        margin: 0;
+        margin-top: 5%;
+    }
+}
