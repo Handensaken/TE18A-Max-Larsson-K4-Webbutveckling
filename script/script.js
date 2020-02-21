@@ -18,28 +18,28 @@ let started = false;
 let images = document.querySelectorAll(".image");
 let opponentImage = document.querySelectorAll(".opponentImage");
 var playerCardImages = [
-    "../img/pazaak_base_1.jpg",
-    "../img/pazaak_base_2.jpg",
-    "../img/pazaak_base_3.jpg",
-    "../img/pazaak_base_4.jpg",
-    "../img/pazaak_base_5.jpg",
-    "../img/pazaak_base_6.jpg",
-    "../img/pazaak_base_7.jpg",
-    "../img/pazaak_base_8.jpg",
-    "../img/pazaak_base_9.jpg",
-    "../img/pazaak_base_10.jpg"
+    "./img/pazaak_base_1.jpg",
+    "./img/pazaak_base_2.jpg",
+    "./img/pazaak_base_3.jpg",
+    "./img/pazaak_base_4.jpg",
+    "./img/pazaak_base_5.jpg",
+    "./img/pazaak_base_6.jpg",
+    "./img/pazaak_base_7.jpg",
+    "./img/pazaak_base_8.jpg",
+    "./img/pazaak_base_9.jpg",
+    "./img/pazaak_base_10.jpg"
 ];
 var opponentCardImages = [
-    "../img/pazaak_opponent_base_1.jpg",
-    "../img/pazaak_opponent_base_2.jpg",
-    "../img/pazaak_opponent_base_3.jpg",
-    "../img/pazaak_opponent_base_4.jpg",
-    "../img/pazaak_opponent_base_5.jpg",
-    "../img/pazaak_opponent_base_6.jpg",
-    "../img/pazaak_opponent_base_7.jpg",
-    "../img/pazaak_opponent_base_8.jpg",
-    "../img/pazaak_opponent_base_9.jpg",
-    "../img/pazaak_opponent_base_10.jpg"
+    "./img/pazaak_opponent_base_1.jpg",
+    "./img/pazaak_opponent_base_2.jpg",
+    "./img/pazaak_opponent_base_3.jpg",
+    "./img/pazaak_opponent_base_4.jpg",
+    "./img/pazaak_opponent_base_5.jpg",
+    "./img/pazaak_opponent_base_6.jpg",
+    "./img/pazaak_opponent_base_7.jpg",
+    "./img/pazaak_opponent_base_8.jpg",
+    "./img/pazaak_opponent_base_9.jpg",
+    "./img/pazaak_opponent_base_10.jpg"
 ];
 
 const turnButton = document.querySelector("#turn-button");
@@ -51,6 +51,7 @@ turnButton.addEventListener("click", (event)=>{
         let number = Math.floor(Math.random()*11);
         if(number==0){number=1;}
         images[playerLimiter].setAttribute("src", playerCardImages[number-1]);
+        images[playerLimiter].setAttribute("alt", number);
         count += number;
         countArea.innerHTML ="Total points: " + count;
     }
@@ -58,7 +59,8 @@ turnButton.addEventListener("click", (event)=>{
     if(!enemyFolded){
         number = Math.floor(Math.random()*11);
         if(number==0){number=1;}
-        opponentImage[playerLimiter].src = opponentCardImages[number-1];
+        opponentImage[playerLimiter].setAttribute("src", opponentCardImages[number-1])
+        opponentImage[playerLimiter].setAttribute("alt", number)
         opponentCount += number;
         enemyCountArea.innerHTML ="opponent's points: " + opponentCount;
         if(opponentCount >= 20){enemyFolded = true;}
@@ -81,27 +83,21 @@ function enemyFold(){
     let randomFold = Math.floor(Math.random()*101);
     if(personalities[0] && randomFold >=60 && opponentCount > 10 && opponentCount<16){
         enemyFolded = true;
-        console.log("folded")
     }
     else if(personalities[0] && opponentCount >= 16){
         enemyFolded = true;
-        console.log("folded")
     }
     else if(personalities[1] && randomFold >= 75 && opponentCount > 12 && opponentCount<18){
         enemyFolded = true;
-        console.log("folded")
     }
     else if(personalities[1] && opponentCount >= 18){
         enemyFolded = true;
-        console.log("folded")
     }
     else if(personalities[2] && randomFold >= 90 && opponentCount > 15 && opponentCount<20){
         enemyFolded = true;
-        console.log("folded")
     }
     else if(personalities[2] && opponentCount == 20){
         enemyFolded = true;
-        console.log("folded")
     }
 }
 
@@ -146,20 +142,20 @@ function GameOver(){
     }
 }
 var addCardImage_negative = [
-    "../img/pazaak_add_n1.jpg",
-    "../img/pazaak_add_n2.jpg",
-    "../img/pazaak_add_n3.jpg",
-    "../img/pazaak_add_n4.jpg",
-    "../img/pazaak_add_n5.jpg",
-    "../img/pazaak_add_n6.jpg",
+    "./img/pazaak_add_n1.jpg",
+    "./img/pazaak_add_n2.jpg",
+    "./img/pazaak_add_n3.jpg",
+    "./img/pazaak_add_n4.jpg",
+    "./img/pazaak_add_n5.jpg",
+    "./img/pazaak_add_n6.jpg",
 ]
 var addCardImage_positive = [
-    "../img/pazaak_add_p1.jpg",
-    "../img/pazaak_add_p2.jpg",
-    "../img/pazaak_add_p3.jpg",
-    "../img/pazaak_add_p4.jpg",
-    "../img/pazaak_add_p5.jpg",
-    "../img/pazaak_add_p6.jpg"
+    "./img/pazaak_add_p1.jpg",
+    "./img/pazaak_add_p2.jpg",
+    "./img/pazaak_add_p3.jpg",
+    "./img/pazaak_add_p4.jpg",
+    "./img/pazaak_add_p5.jpg",
+    "./img/pazaak_add_p6.jpg"
 ]
 let addCardImages = document.querySelectorAll(".addCard")
 let personalities = [false, false, false];  //careful, aggressive, stupid
@@ -183,8 +179,8 @@ window.onload = (event) => {
         else{
             test *= -1;
             addCardImages[i].setAttribute("src", addCardImage_negative[test-1]);
-            addCardImages[i].setAttribute("alt", test)
             test *= -1;
+            addCardImages[i].setAttribute("alt", test)
         }
     }
     let rand = Math.floor(Math.random()*3);
